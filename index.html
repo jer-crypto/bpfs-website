@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Better Path Fulfilment Solutions is an Ontario-based boutique 3PL for Canadian direct-to-consumer, supplement, and nutrition brands." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <title>Better Path Fulfilment Solutions</title>
+  <style>
+    :root {
+      --red: #c82027;
+      --red-dark: #a71218;
+      --ink: #111111;
+      --paper: #ffffff;
+      --muted: #5e6268;
+      --soft: #f1f2f3;
+      --line: #d9dcdf;
+      --inverse: #ffffff;
+      --shadow: 0 18px 55px rgba(17,17,17,.12);
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #f7f7f7;
+        --paper: #111214;
+        --muted: #b8bcc1;
+        --soft: #1b1d20;
+        --line: #34373b;
+        --inverse: #ffffff;
+        --shadow: 0 18px 55px rgba(0,0,0,.38);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Barlow", sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--red);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Barlow Condensed", sans-serif;
+      line-height: .98;
+    }
+    h1 { font-size: clamp(3.8rem, 8vw, 7.2rem); font-weight: 900; letter-spacing: -.035em; text-transform: uppercase; }
+    h2 { font-size: clamp(2.6rem, 5vw, 4.8rem); font-weight: 800; letter-spacing: -.025em; text-transform: uppercase; }
+    h3 { font-size: 1.55rem; font-weight: 800; }
+    p { margin: 0; }
+    .skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; transform: translateY(-160%); background: var(--paper); padding: 10px 14px; border: 2px solid var(--ink); }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--paper) 94%, transparent);
+      backdrop-filter: blur(12px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      width: 156px;
+      height: 58px;
+      padding: 5px 9px;
+      text-decoration: none;
+    }
+    .nav-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: .88rem; font-weight: 700; }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:not(.btn):hover { color: var(--red); }
+    .btn {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 22px;
+      border: 2px solid var(--red);
+      border-radius: 3px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .btn:hover { background: var(--red-dark); border-color: var(--red-dark); }
+    .btn-outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+    .btn-outline:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .btn-light { background: #fff; color: #111; border-color: #fff; }
+    .btn-light:hover { background: #111; color: #fff; border-color: #111; }
+    .arrow { font-size: 1.25em; line-height: 1; }
+
+    .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+    .hero::before { content: ""; position: absolute; inset: 0 auto 0 0; width: clamp(8px, 1.2vw, 18px); background: var(--red); }
+    .hero-grid { min-height: 690px; padding-block: 84px 70px; display: grid; grid-template-columns: 1.18fr .82fr; gap: 74px; align-items: center; }
+    .hero-copy { max-width: 700px; }
+    .hero-copy h1 span { color: var(--red); }
+    .hero-copy .lead { margin-top: 26px; max-width: 650px; color: var(--muted); font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.5; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-note { margin-top: 18px; font-size: .9rem; color: var(--muted); }
+    .brand-panel { position: relative; border: 1px solid var(--line); background: #fff; box-shadow: var(--shadow); }
+    .brand-panel::after { content: ""; position: absolute; width: 48%; height: 12px; right: -12px; bottom: -12px; background: var(--red); z-index: -1; }
+    .brand-panel img { width: 100%; aspect-ratio: 1.7/1; object-fit: contain; padding: 34px 30px 14px; }
+    .brand-panel figcaption { padding: 18px 26px; background: #111; color: #fff; font-family: "Barlow Condensed", sans-serif; font-size: 1.15rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+
+    .trust { background: var(--ink); color: var(--paper); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .trust-item { position: relative; min-height: 108px; display: flex; align-items: center; gap: 16px; padding: 24px 30px; }
+    .trust-item + .trust-item { border-left: 1px solid color-mix(in srgb, var(--paper) 22%, transparent); }
+    .trust-mark { flex: 0 0 auto; width: 8px; height: 34px; background: var(--red); transform: skew(-12deg); }
+    .trust-item strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 1.35rem; text-transform: uppercase; letter-spacing: .03em; }
+    .trust-item span { display: block; font-size: .83rem; opacity: .72; }
+
+    section { padding-block: 104px; }
+    .section-head { display: grid; grid-template-columns: 1fr .7fr; gap: 70px; align-items: end; margin-bottom: 56px; }
+    .section-intro { max-width: 560px; color: var(--muted); font-size: 1.08rem; }
+    .service-list { border-top: 2px solid var(--ink); }
+    .service-row { display: grid; grid-template-columns: 86px 1fr .95fr; gap: 28px; align-items: center; padding: 28px 10px 28px 0; border-bottom: 1px solid var(--line); }
+    .service-num { color: var(--red); font-family: "Barlow Condensed", sans-serif; font-size: 1rem; font-weight: 800; letter-spacing: .12em; }
+    .service-row h3 { text-transform: uppercase; }
+    .service-row p { color: var(--muted); }
+
+    .fit-section { background: var(--soft); }
+    .fit-grid { display: grid; grid-template-columns: .88fr 1.12fr; gap: 80px; align-items: center; }
+    .fit-copy p:not(.eyebrow) { margin-top: 22px; color: var(--muted); font-size: 1.1rem; }
+    .fit-copy .btn { margin-top: 30px; }
+    .fit-points { display: grid; gap: 14px; }
+    .fit-point { display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start; padding: 24px; background: var(--paper); border-top: 4px solid var(--red); box-shadow: 0 7px 25px rgba(17,17,17,.06); }
+    .fit-point b { font-family: "Barlow Condensed", sans-serif; color: var(--red); font-size: 1.4rem; }
+    .fit-point strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 1.45rem; text-transform: uppercase; }
+    .fit-point span { color: var(--muted); font-size: .95rem; }
+
+    .process-wrap { display: grid; grid-template-columns: .72fr 1.28fr; gap: 80px; }
+    .process-copy { position: sticky; top: 118px; align-self: start; }
+    .process-copy p:not(.eyebrow) { margin-top: 22px; color: var(--muted); }
+    .steps { counter-reset: step; border-top: 2px solid var(--ink); }
+    .step { counter-increment: step; position: relative; padding: 28px 0 30px 84px; border-bottom: 1px solid var(--line); }
+    .step::before { content: "0" counter(step); position: absolute; left: 0; top: 23px; color: var(--red); font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 1.45rem; }
+    .step h3 { text-transform: uppercase; margin-bottom: 8px; }
+    .step p { color: var(--muted); }
+
+    .about { padding-block: 0 104px; }
+    .about-panel { display: grid; grid-template-columns: 1fr .85fr; min-height: 420px; background: #111; color: #fff; }
+    .about-copy { padding: clamp(42px, 7vw, 80px); }
+    .about-copy .eyebrow { color: #ee5960; }
+    .about-copy p:not(.eyebrow) { margin-top: 26px; max-width: 650px; color: #d3d3d3; font-size: 1.08rem; }
+    .about-visual { position: relative; display: grid; place-items: center; overflow: hidden; background: var(--red); }
+    .about-visual::before, .about-visual::after { content: ""; position: absolute; width: 420px; height: 78px; border: 20px solid #111; transform: skewX(-27deg) rotate(-8deg); opacity: .22; }
+    .about-visual::before { top: 15%; left: -28%; }
+    .about-visual::after { bottom: 8%; right: -35%; }
+    .about-visual img { position: relative; z-index: 1; width: min(280px, 70%); filter: drop-shadow(0 16px 14px rgba(0,0,0,.22)); }
+
+    .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 80px; }
+    .faq-copy p:not(.eyebrow) { margin-top: 22px; color: var(--muted); }
+    .faq-list { border-top: 2px solid var(--ink); }
+    details { border-bottom: 1px solid var(--line); }
+    summary { position: relative; cursor: pointer; list-style: none; padding: 24px 54px 24px 0; font-family: "Barlow Condensed", sans-serif; font-size: 1.35rem; font-weight: 800; line-height: 1.2; text-transform: uppercase; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 4px; top: 17px; color: var(--red); font-size: 2rem; font-weight: 400; }
+    details[open] summary::after { content: "−"; }
+    details p { padding: 0 48px 24px 0; color: var(--muted); }
+
+    .contact { background: var(--red); color: #fff; }
+    .contact-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 78px; align-items: start; }
+    .contact .eyebrow { color: #fff; opacity: .72; }
+    .contact-copy p:not(.eyebrow) { margin-top: 24px; color: #fff; opacity: .88; }
+    .contact-email { display: inline-flex; margin-top: 30px; color: #fff; font-weight: 800; text-decoration-thickness: 2px; text-underline-offset: 5px; overflow-wrap: anywhere; }
+    .quote-form { background: #fff; color: #111; padding: clamp(24px, 4vw, 42px); box-shadow: var(--shadow); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .field.full { grid-column: 1 / -1; }
+    label { display: block; margin-bottom: 7px; font-size: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    input, select, textarea { width: 100%; min-height: 50px; border: 1px solid #b7bbc0; border-radius: 2px; background: #fff; color: #111; padding: 12px 14px; }
+    textarea { min-height: 120px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { outline: 3px solid rgba(200,32,39,.22); border-color: var(--red); }
+    .form-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 22px; }
+    .form-note { max-width: 290px; color: #5e6268; font-size: .82rem; line-height: 1.35; }
+    .form-status { display: none; grid-column: 1 / -1; background: #f1f2f3; padding: 12px 14px; color: #111; font-size: .9rem; }
+    .form-status.visible { display: block; }
+
+    footer { background: #0c0c0d; color: #fff; }
+    .footer-grid { min-height: 170px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .footer-brand { display: flex; align-items: center; gap: 18px; }
+    .footer-brand img { width: 78px; height: 52px; object-fit: contain; background: #fff; padding: 4px; }
+    .footer-brand strong { display: block; font-family: "Barlow Condensed", sans-serif; text-transform: uppercase; font-size: 1.2rem; letter-spacing: .04em; }
+    .footer-brand span { color: #aeb1b5; font-size: .85rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; font-size: .88rem; }
+    .footer-links a { color: #fff; }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.btn) { display: none; }
+      .hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 52px; padding-block: 64px 74px; }
+      .brand-panel { max-width: 560px; }
+      .section-head, .fit-grid, .process-wrap, .faq-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .section-head { align-items: start; }
+      .process-copy { position: static; }
+      .about-panel { grid-template-columns: 1fr; }
+      .about-visual { min-height: 280px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .nav-inner { height: 68px; }
+      .nav-logo { width: 124px; height: 50px; padding: 4px 7px; }
+      .nav-inner .btn { min-height: 42px; padding-inline: 15px; font-size: .88rem; }
+      h1 { font-size: clamp(3rem, 15vw, 4.6rem); }
+      section { padding-block: 76px; }
+      .hero::before { width: 6px; }
+      .hero-grid { padding-block: 52px 60px; }
+      .hero-copy .lead { margin-top: 20px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .brand-panel img { padding: 26px 20px 8px; }
+      .brand-panel figcaption { font-size: .98rem; padding: 15px 18px; }
+      .trust-grid { grid-template-columns: 1fr; padding-block: 10px; }
+      .trust-item { min-height: 82px; padding: 16px 8px; }
+      .trust-item + .trust-item { border-left: 0; border-top: 1px solid color-mix(in srgb, var(--paper) 22%, transparent); }
+      .service-row { grid-template-columns: 52px 1fr; gap: 8px 14px; padding-block: 22px; }
+      .service-row p { grid-column: 2; }
+      .fit-point { grid-template-columns: 42px 1fr; padding: 20px 18px; }
+      .step { padding-left: 62px; }
+      .about { padding-bottom: 76px; }
+      .about-panel { margin-inline: -14px; }
+      .about-copy { padding-inline: 28px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .quote-form { margin-inline: -4px; }
+      .form-footer { align-items: stretch; }
+      .form-footer .btn { width: 100%; }
+      .footer-grid { padding-block: 34px; flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="wrap nav-inner">
+      <a class="nav-logo" href="#main" aria-label="Better Path Fulfilment Solutions home">
+        <img src="assets/bpfs-logo.png" alt="Better Path Fulfilment Solutions Inc." />
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#about">About</a>
+        <a class="btn" href="#quote">Get a quote <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Ontario-based boutique 3PL</p>
+          <h1>Fulfilment that keeps your brand <span>moving.</span></h1>
+          <p class="lead">Dedicated capacity, direct access, and the day-to-day logistics support Canadian direct-to-consumer brands need to grow with confidence.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#quote">Get a quote <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-outline" href="#process">How it works</a>
+          </div>
+          <p class="hero-note">Built for brands that want a hands-on fulfilment partner—not another ticket number.</p>
+        </div>
+        <figure class="brand-panel">
+          <img src="assets/bpfs-logo.png" alt="Better Path logo with a maple leaf, shipping box, and forward-moving arrow" />
+          <figcaption>Direct access. Dedicated capacity. A better path forward.</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <aside class="trust" aria-label="What sets BPFS apart">
+      <div class="wrap trust-grid">
+        <div class="trust-item"><i class="trust-mark" aria-hidden="true"></i><div><strong>Canadian-owned</strong><span>A fulfilment partner that knows the market.</span></div></div>
+        <div class="trust-item"><i class="trust-mark" aria-hidden="true"></i><div><strong>Ontario-based</strong><span>Hands-on support close to home.</span></div></div>
+        <div class="trust-item"><i class="trust-mark" aria-hidden="true"></i><div><strong>DTC &amp; supplement focus</strong><span>Built around products that move quickly.</span></div></div>
+      </div>
+    </aside>
+
+    <section id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">What we handle</p><h2 id="services-title">The essentials, done right.</h2></div>
+          <p class="section-intro">A focused set of fulfilment services that keeps your inventory organized and your daily orders moving.</p>
+        </div>
+        <div class="service-list">
+          <article class="service-row"><span class="service-num">01</span><h3>Warehousing &amp; storage</h3><p>Dedicated capacity for the products your customers are waiting for.</p></article>
+          <article class="service-row"><span class="service-num">02</span><h3>Inbound receiving</h3><p>Structured receiving as your finished goods arrive at the warehouse.</p></article>
+          <article class="service-row"><span class="service-num">03</span><h3>Pick &amp; pack</h3><p>Careful order handling built around your products and customer promise.</p></article>
+          <article class="service-row"><span class="service-num">04</span><h3>Daily order workflow</h3><p>A consistent, hands-on rhythm for getting orders ready to move.</p></article>
+          <article class="service-row"><span class="service-num">05</span><h3>Inventory visibility</h3><p>Basic visibility that helps you understand what is on hand.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="fit-section" aria-labelledby="fit-title">
+      <div class="wrap fit-grid">
+        <div class="fit-copy">
+          <p class="eyebrow">Who it’s for</p>
+          <h2 id="fit-title">A strong fit for focused brands.</h2>
+          <p>BPFS is built for Canadian direct-to-consumer businesses that value responsive communication and a closer working relationship with the people handling their product.</p>
+          <a class="btn" href="#quote">Tell us about your brand <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="fit-points">
+          <div class="fit-point"><b>01</b><div><strong>Direct-to-consumer</strong><span>For brands shipping individual customer orders across their sales channels.</span></div></div>
+          <div class="fit-point"><b>02</b><div><strong>Supplements &amp; nutrition</strong><span>A particular focus on brands with fast-moving health and performance products.</span></div></div>
+          <div class="fit-point"><b>03</b><div><strong>Boutique partnership</strong><span>For teams that want direct access instead of disappearing inside a giant warehouse.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" aria-labelledby="process-title">
+      <div class="wrap process-wrap">
+        <div class="process-copy">
+          <p class="eyebrow">How it works</p>
+          <h2 id="process-title">A clear path from first call to daily flow.</h2>
+          <p>Every brand is different. The first step is understanding what you sell, how orders arrive, and what your day-to-day fulfilment actually needs.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3>Start with the fit</h3><p>Share your product mix, sales channels, typical monthly volume, and current fulfilment challenges.</p></article>
+          <article class="step"><h3>Scope the workflow</h3><p>Together, we define receiving, storage, pick-and-pack needs, and how your existing carrier accounts fit into the process.</p></article>
+          <article class="step"><h3>Plan the handoff</h3><p>We align on how inventory will arrive and what needs to be ready before your daily workflow begins.</p></article>
+          <article class="step"><h3>Move orders consistently</h3><p>Once onboarded, BPFS handles the agreed day-to-day fulfilment flow with direct communication when questions come up.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="wrap about-panel">
+        <div class="about-copy">
+          <p class="eyebrow">About BPFS</p>
+          <h2 id="about-title">Big enough to handle the work. Close enough to know your product.</h2>
+          <p>Better Path Fulfilment Solutions Inc. is a Canadian third-party logistics and order fulfilment company based in Ontario. BPFS takes a boutique approach: dedicated capacity and direct access to the people doing the work.</p>
+        </div>
+        <div class="about-visual" aria-hidden="true"><img src="assets/bpfs-mark.png" alt="" /></div>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <div class="faq-copy"><p class="eyebrow">Common questions</p><h2 id="faq-title">Before we talk.</h2><p>A few practical answers for brand owners considering a fulfilment partner.</p></div>
+        <div class="faq-list">
+          <details><summary>What kinds of brands does BPFS work with?</summary><p>BPFS is positioned for Canadian direct-to-consumer brands, with a particular focus on supplement and nutrition products.</p></details>
+          <details><summary>What fulfilment services are available?</summary><p>Core services include warehousing and storage, inbound receiving, pick and pack, daily order workflow, and basic inventory visibility.</p></details>
+          <details><summary>How does shipping work?</summary><p>Shipping and postage typically run through the client’s own carrier accounts. We can discuss how that fits your current setup during the quote process.</p></details>
+          <details><summary>Is BPFS a large national 3PL?</summary><p>BPFS takes a boutique approach. The focus is dedicated capacity, direct communication, and a closer working relationship—not being one account among thousands.</p></details>
+          <details><summary>What information helps with a quote?</summary><p>Your product type, sales channels, monthly order range, inventory needs, and any current fulfilment challenges are the best place to start.</p></details>
+          <details><summary>How do we begin?</summary><p>Send a short note through the quote form below. It will prepare an email with your details so the conversation can start directly.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="quote" aria-labelledby="quote-title">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Request a quote</p>
+          <h2 id="quote-title">Let’s find the better path.</h2>
+          <p>Tell us what you sell and what you need help moving. Your answers will open as a ready-to-send email so you can review everything before it goes.</p>
+          <a class="contact-email" href="mailto:jer@bpfs3pl.com">jer@bpfs3pl.com</a>
+        </div>
+        <form class="quote-form" id="quoteForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" aria-label="Your name" autocomplete="name" required /></div>
+            <div class="field"><label for="company">Company</label><input id="company" name="company" aria-label="Company" autocomplete="organization" required /></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" aria-label="Email" autocomplete="email" required /></div>
+            <div class="field"><label for="volume">Monthly order volume</label><select id="volume" name="volume" aria-label="Monthly order volume" required><option value="" selected disabled>Select a range</option><option>Just getting started</option><option>Under 500 orders</option><option>500–2,000 orders</option><option>2,000–5,000 orders</option><option>More than 5,000 orders</option></select></div>
+            <div class="field full"><label for="products">What do you sell?</label><input id="products" name="products" aria-label="What do you sell?" placeholder="Product type or category" required /></div>
+            <div class="field full"><label for="message">What do you need help with?</label><textarea id="message" name="message" aria-label="What do you need help with?" placeholder="Tell us about your current setup, channels, or fulfilment challenges."></textarea></div>
+            <p class="form-status" id="formStatus" role="status">Your email app should open with the quote details filled in. If it doesn’t, email <a href="mailto:jer@bpfs3pl.com">jer@bpfs3pl.com</a>.</p>
+          </div>
+          <div class="form-footer">
+            <p class="form-note">Nothing is sent automatically. You’ll review the message in your email app first.</p>
+            <button class="btn" type="submit">Draft my quote email <span class="arrow" aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><img src="assets/bpfs-mark.png" alt="" /><div><strong>Better Path Fulfilment Solutions Inc.</strong><span>Ontario, Canada</span></div></div>
+      <div class="footer-links"><a href="#services">Services</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="mailto:jer@bpfs3pl.com">Email BPFS</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('quoteForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const subject = `Fulfilment quote request — ${data.get('company')}`;
+      const body = [
+        'Hi Jer,',
+        '',
+        'I’d like to discuss fulfilment with BPFS.',
+        '',
+        `Name: ${data.get('name')}`,
+        `Company: ${data.get('company')}`,
+        `Email: ${data.get('email')}`,
+        `Monthly order volume: ${data.get('volume')}`,
+        `Products: ${data.get('products')}`,
+        '',
+        'What we need help with:',
+        data.get('message') || 'Not provided',
+        '',
+        'Thanks'
+      ].join('\n');
+      status.classList.add('visible');
+      window.location.href = `mailto:jer@bpfs3pl.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
+</html>
