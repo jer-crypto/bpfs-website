@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light dark" />
-  <meta name="description" content="Better Path Fulfilment Solutions is a Canadian 3PL in Stirling, Ontario offering Amazon FBA prep, DTC order fulfilment, warehousing, kitting, and returns processing." />
+  <meta name="description" content="Boutique Canadian 3PL in Stirling, Ontario — Amazon FBA prep, DTC pick & pack, warehousing and returns for e-commerce brands. Direct access to the people handling your product." />
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
-  <title>Better Path Fulfilment Solutions</title>
+  <title>Amazon FBA Prep & 3PL Fulfilment in Ontario | Better Path Fulfilment Solutions</title>
   <style>
     :root {
       --red: #c82027;
@@ -178,6 +178,13 @@
     .about-mark-card { position: relative; z-index: 1; width: min(320px, 72%); aspect-ratio: 1.45 / 1; display: grid; place-items: center; padding: 26px; background: #fff; box-shadow: 0 18px 38px rgba(0,0,0,.2); }
     .about-visual img { width: 100%; filter: drop-shadow(0 12px 10px rgba(0,0,0,.16)); }
 
+    .clients { padding-block: 0 104px; }
+    .clients-head p:not(.eyebrow) { margin-top: 22px; color: var(--muted); max-width: 640px; }
+    .client-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 36px; }
+    .client-card { padding: 28px; background: var(--paper); border-top: 4px solid var(--red); box-shadow: 0 7px 25px rgba(17,17,17,.06); display: grid; justify-items: center; align-content: center; text-align: center; gap: 16px; }
+    .client-logo { width: 100%; max-width: 330px; height: auto; }
+    .client-card span { color: var(--muted); font-size: .95rem; }
+
     .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 80px; }
     .faq-copy p:not(.eyebrow) { margin-top: 22px; color: var(--muted); }
     .faq-list { border-top: 2px solid var(--ink); }
@@ -220,7 +227,7 @@
       .nav-links a:not(.btn) { display: none; }
       .hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 52px; padding-block: 64px 74px; }
       .brand-panel { max-width: 560px; }
-      .section-head, .fit-grid, .process-wrap, .faq-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .section-head, .fit-grid, .process-wrap, .faq-grid, .contact-grid, .client-cards { grid-template-columns: 1fr; gap: 40px; }
       .section-head { align-items: start; }
       .process-copy { position: static; }
       .about-panel { grid-template-columns: 1fr; }
@@ -369,6 +376,20 @@
       </div>
     </section>
 
+    <section class="clients" id="clients" aria-labelledby="clients-title">
+      <div class="wrap">
+        <div class="clients-head">
+          <p class="eyebrow">Who we work with</p>
+          <h2 id="clients-title">Brands on our shelves.</h2>
+          <p>BPFS provides order fulfilment for established sports nutrition brands — every unit received, stored, and shipped with lot and expiry tracking.</p>
+        </div>
+        <div class="client-cards">
+          <div class="client-card"><img class="client-logo" src="assets/sd-pharmaceuticals-logo.png" alt="SD Pharmaceuticals" /><span>Sports nutrition — DTC &amp; wholesale fulfilment</span></div>
+          <div class="client-card"><img class="client-logo" src="assets/pharmafreak-logo.png" alt="PharmaFreak" /><span>Sports nutrition — DTC &amp; wholesale fulfilment</span></div>
+        </div>
+      </div>
+    </section>
+
     <section id="faq" aria-labelledby="faq-title">
       <div class="wrap faq-grid">
         <div class="faq-copy"><p class="eyebrow">Common questions</p><h2 id="faq-title">Before we talk.</h2><p>A few practical answers for brand owners considering a fulfilment partner.</p></div>
@@ -450,6 +471,26 @@
       status.classList.add('visible');
       window.location.href = `mailto:info@bpfs3pl.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Better Path Fulfilment Solutions Inc.",
+    "url": "https://bpfs3pl.com/",
+    "email": "info@bpfs3pl.com",
+    "telephone": "+1-613-857-6817",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "400 W Front St, Building 4, Unit 1",
+      "addressLocality": "Stirling",
+      "addressRegion": "ON",
+      "postalCode": "K0K 3E0",
+      "addressCountry": "CA"
+    },
+    "openingHours": "Mo-Fr 08:00-16:00",
+    "description": "Canadian third-party logistics and order fulfilment company in Stirling, Ontario. Amazon FBA prep, DTC fulfilment, warehousing, kitting and returns processing."
+  }
   </script>
 </body>
 </html>
