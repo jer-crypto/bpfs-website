@@ -478,6 +478,7 @@
       ].join('\n');
       status.classList.add('visible');
       window.location.href = `mailto:info@bpfs3pl.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      setTimeout(() => { window.location.href = '/thank-you/'; }, 1000);
     });
   </script>
   <script type="application/ld+json">
